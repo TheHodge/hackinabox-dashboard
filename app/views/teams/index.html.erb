@@ -1,0 +1,15 @@
+<h2>All The Leeds Hack Teams</h2>
+<% if @teams.any? %>
+<table cellpadding="0" cellspacing="0" class="tablesorter" id="myTable">
+	<thead>
+	<tr><th>Team Name:</th><th>Num Members:</th><th>Options:</th></tr>
+	</thead>
+	<tbody>
+<% @teams.each do |team| %>
+	<tr><td><%= team.name%></td><td><%= team.hackers.size %></td><td><%= link_to "show", team_path(team) %><% if team.created_by == current_hacker.id%> | <%= link_to "edit", edit_team_path(team) %><% end %></td></tr>
+<% end %>
+	</tbody>
+</table>
+<% else %>
+	<p>No teams have been created yet</p>
+<% end %>

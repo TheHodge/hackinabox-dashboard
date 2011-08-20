@@ -1,0 +1,15 @@
+<%= javascript_include_tag "scripts" %>
+<%= javascript_include_tag "jquery.tablesorter.min" %>
+<%= javascript_include_tag "facebox" %>
+<%= javascript_include_tag "jquery.flot.pack" %>
+<!--[if IE]>
+  <%= javascript_include_tag "excanvas.pack" %>
+<![endif]-->
+       
+<!--[if IE 6]>
+<%= javascript_include_tag "pngfix.pack" %>
+<script>
+    DD_belatedPNG.fix('.png_bg');
+</script>        
+<![endif]-->
+<%= javascript_include_tag "graphs" %>

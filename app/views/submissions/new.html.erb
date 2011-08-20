@@ -1,0 +1,10 @@
+<h2>Submit Your Hack</h2>
+<p>It's time to submit your hack to the judges and to the presentation... excited yet?</p>
+<% if current_hacker.teams.any? %>
+<%= simple_form_for @submission, :html => { :multipart => true } do |f|%>
+	<%= render "fields", :f => f%>
+	<%= f.button :submit, :value => "Submit Hack" %>
+<% end %>
+<% else %>
+	<div class="fail large png_bg">You must be in a team to submit a hack.</div>
+<% end %>

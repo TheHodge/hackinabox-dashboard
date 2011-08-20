@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leeds Hack 2</title>
+  <%= render "layouts/javascripts" %>
+  <%= csrf_meta_tag %>
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.0.0.min.css">
+</head>
+<body>
+	
+	
+	
+	<%= render "layouts/header" %>
+
+	<div class="container">
+		
+	<% flash.each do |key,value|%>
+		<div class="<%= key %> canhide png_bg"><%= value %></div>
+	<% end %>
+	<br />
+	<br />
+	<br />
+	
+	<%= yield %>
+	<%= debug(params) if Rails.env.development? %>
+	</div>
+	
+	
+
+<%= render "layouts/footer" %>
+</body>
+</html>

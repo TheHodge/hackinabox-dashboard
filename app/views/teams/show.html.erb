@@ -1,0 +1,8 @@
+<h2><%= @team.name %></h2>
+	<p><%= @team.description %></p>
+	<% @team.hackers.each do |hacker| %>
+		<p><%= gravatar_for hacker %><%= hacker.name %></p>
+	<% end %>
+	<% if !@team.hackers.include?(current_hacker) %>
+	<%= button_to "Join This Team", join_team_path(@team)%>
+	<% end %>

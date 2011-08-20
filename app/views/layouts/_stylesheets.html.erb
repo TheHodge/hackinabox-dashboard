@@ -1,0 +1,7 @@
+<% if signed_in? %>
+	<%= stylesheet_link_tag "styles", :media => "screen" %>
+<% else %>
+	<%= stylesheet_link_tag "admin", :media => "screen" %>
+<% end %>
+<%= stylesheet_link_tag "themes/dark_blue", :media => "screen" %>
+<%= stylesheet_link_tag "facebox", :media => "screen" %>

@@ -1,0 +1,9 @@
+<h2>Source Control</h2>
+
+<p>We've created an interactive dashboard (which you can see at <a href='http://live.hackinbox.org'>live.hackinabox.org</a>) This is powered by your commits so we've created a post commit hook that sends the details of your commit to our server and lets us create some fun facts about the weekend (we think it could be an interesting dataset for next time)</p>
+
+
+<h2>At the moment it only works with git but stay tuned for more source control options </h2>
+<%= button_to "Version with Git", :action => :download %>
+
+<p>Place this file into your .git/hooks/ folder for LeedsHack Magic </p>

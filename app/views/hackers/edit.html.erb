@@ -1,0 +1,11 @@
+<h2>Edit Your Profile</h2>
+<p>Tell us (and the world!) a bit more about yourself... don't be shy oh and make sure you have a gravatar... you'll need it later (spoilers..)</p>
+<%= simple_form_for @hacker do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<%= f.input :name%>
+	<%= f.input :description%>
+	<%= f.button :submit, :value => "Update Profile" %>
+<% end %>
+
+<h3>Your Gravatar</h3>
+<p><%= gravatar_for(@hacker) %> Don't have a gravtar? You can get one <%= link_to "here", "http://en.gravatar.com/site/signup/"%></p>

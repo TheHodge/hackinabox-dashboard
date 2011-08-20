@@ -1,0 +1,20 @@
+<h2>Hacks your teams have submitted</h2>
+
+<% if @teams.any? %>
+	<table cellpadding="0" cellspacing="0" class="tablesorter" id="myTable">
+		<thead>
+		<tr><th>Hack Name:</th><th>Hack Team:</th><th>Options:</th></tr>
+		</thead>
+		<tbody>
+<% @teams.each do |team| %>
+<% if team.submissions.any?%>
+<% team.submissions.each do |submission| %>
+		<tr><td><%= submission.name%></td><td><%= team.name %></td><td><%= link_to "show", submission_path(submission) %> | <%= link_to "edit", edit_submission_path(submission) %></td></tr>
+<% end %>
+<% end %>
+<% end %>
+<% else %>
+	<p>You have no submitted hacks. You cannot submit a hack without being in a team.</p>
+<% end %>
+	</tbody>
+</table>

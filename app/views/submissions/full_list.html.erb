@@ -1,0 +1,24 @@
+<h1>All Hacks</h1>
+
+	<table cellpadding="0" cellspacing="0" class="tablesorter" id="myTable">
+		<thead>
+		<tr><th>Hack Name:</th><th>Hack Team:</th><th>Description:</th></tr>
+		</thead>
+		<tbody>
+	<% if @submissions.any? %>
+	<% @submissions.each do |hack| %>
+		<tr>
+			<td>
+				<%=  link_to hack.name, submission_path(hack) %>
+			</td>
+			<td>
+				<%= link_to hack.team.name, team_path(hack.team) %>
+			</td>
+			<td>
+				<%= hack.description %>
+			</td>
+		</tr>
+	<% end %>
+	<% end %>
+		</tbody>
+	</table>

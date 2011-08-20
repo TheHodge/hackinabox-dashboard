@@ -1,0 +1,17 @@
+<div class="topbar"> 
+  <div class="container fixed"> 
+    <h3><a class="logo" href="#"> 
+     <span>LeedsHack</span> 
+    </a></h3> 
+    <ul> 
+      <li class="active"><%= link_to "My Profile", edit_profile_path %></li> 
+	  <li><%= link_to "Source", source_path %></li>
+      <li><%= link_to "Add Team", new_team_path %></li> 
+      <li><%= link_to "View Teams", teams_path %></li> 
+      <li><%= link_to "Submit Hack!", new_submission_path %></li> 
+      <li><%= link_to "Your Hacks", submissions_path %></li> 
+      <li><%= link_to " Food Order", edit_food_path %></li> 
+      <li><a href="#">You have <%= timer %></a></li> 
+    </ul> 
+  </div> 
+</div>

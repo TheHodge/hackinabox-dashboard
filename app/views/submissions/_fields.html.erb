@@ -1,0 +1,7 @@
+<%= render 'shared/error_messages', :object => f.object %>
+<%= f.association :team, :collection => current_hacker.teams, :label => "Which of your teams is submitting the hack?", :hint => "Only one person on a team should submit the hack.", :input_html => {:style => "width:300px;"} %>
+<%= f.input :name, :label => "Hack Name", :input_html => {:class => "large"} %>
+<%= f.input :description, :label => "Hack Description" %>
+<%= f.input :url, :hint => "Urls must start with http://", :input_html => {:class => "medium"} %>
+<%= f.association :categories, :as => :check_boxes, :label => "Challenges"%>
+<%= f.input :thumbnail, :input_html => {:class => "large"}  %>

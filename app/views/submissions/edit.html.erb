@@ -1,0 +1,6 @@
+<h2>Edit Your Hack</h2>
+<p>Some text on explaining the process goes here</p>
+<%= simple_form_for @submission, :html => { :multipart => true } do |f|%>
+	<%= render "fields", :f => f%>
+	<%= f.button :submit, :value => "Edit Hack" %>
+<% end %>

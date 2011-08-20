@@ -1,0 +1,10 @@
+<h1>Please Login</h1>
+<p>Welcome! Please sign in to access the site.</p>
+<div class="information large png_bg" style="font-size:15px;text-align:center;">If you have not signed up yet you can do so <%= link_to "here", signup_path %></div>
+
+<%= simple_form_for @hacker_session do |f|%>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<%= f.input :email%>
+	<%= f.input :password%>
+	<p><%= f.button :submit, :value => "Sign In"%></p>
+<% end %>

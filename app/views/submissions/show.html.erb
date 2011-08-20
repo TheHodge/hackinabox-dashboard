@@ -1,0 +1,19 @@
+<h2><%= @submission.name %></h2>
+
+	<p><%= @submission.description%></p>
+	
+	<p>Submitted By: <%= @submission.team.name %></p>
+	
+	<p>Url: <%= @submission.url%></p>
+	
+	<p>Thumbnail: <% if !@submission.thumbnail_file_name.nil? %><%= image_tag @submission.thumbnail.url(:medium) %><% end %></p>
+	
+	<p>Entered in categories:
+		<ul>
+			<% @submission.categories.each do |category|%>
+				<li><%= category.name%></li>
+			<% end %>
+		</ul>
+	</p>
+	
+	<p><%= link_to "Back to Hacks Page", submissions_path%>

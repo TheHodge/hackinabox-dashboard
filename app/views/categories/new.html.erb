@@ -1,0 +1,9 @@
+<h2> Add Challenge</h2>
+<%= simple_form_for @category do |f|%>
+	<%= f.input :name %>
+	<%= f.button :submit %>
+<% end %>
+<h2>Current Categories</h2>
+<% @categories.each do |cat|%>
+	<p><%= cat.name %></p>
+<% end %>

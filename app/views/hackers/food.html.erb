@@ -1,0 +1,18 @@
+<h2>Please Choose Your Evening Meal</h2>
+<p>We've partnered with the wonderful folks at <a href='http://www.just-eat.co.uk'>Just Eat</a> to try and do the largest takeaway order EVER!!, now just because you select something here doesn't mean that we can guarantee that you will get it (we are hoping that everyone takes a little bit of everything) but it gives us some indication of what people want the most and what we should order...</p>
+<% if !@hacker.food.nil? %><p>Your current choice is <b><%= @hacker.food.name %></b></p><% end %>
+
+<%= simple_form_for @hacker do |f| %>
+	<% if @options.any? %>
+	<% @options.each do |option|%>
+		<%= f.label :food_id, option, :class => "collection_radio", :style => "font-size:15px;" %><br />
+		<% if @current_food.any? %>
+		<% @current_food.where(:category => option).each do |food| %>
+			<p><%= f.radio_button :food_id, food.id, :class => "radio optional" %><%= f.label :food_id, food.name, :class => "collection_radio" %></p>
+		<% end %>
+		<% end %>
+	<% end %>
+	<% end %>
+	<%= f.input :requirments, :label => "Any special requirements?"%>
+	<%= f.button :submit, :value => "Submit Order" %>
+<% end %>

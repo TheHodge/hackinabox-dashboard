@@ -1,0 +1,15 @@
+<% if object.errors.any? %>
+	
+	<div class="fail large png_bg">
+		<h2>
+			<%= pluralize(object.errors.count, "error")%> occurred:
+		</h2>
+		<p> There were problems with the following: </p>
+		<ul>
+		<% object.errors.full_messages.each do |message|%>
+			<li><%= message.humanize %></li>
+		<% end %>
+		</ul>
+	</div>
+	
+<% end %>

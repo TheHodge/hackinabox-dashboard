@@ -1,0 +1,40 @@
+  <!--  START SIDEBAR -->
+  <div id="sidebar">
+    <h3>My Details</h3>
+    <ul>
+      <li><%= icon("user_32", "Profile")%><%= link_to "My Profile", edit_profile_path %><br />
+          	<p>Logged in as <%= current_hacker.email %><br />
+				<%= link_to "Sign Out", signout_path %></p>
+      </li>
+      <li><%= icon("window_app_list_chart_32", "Source")%><%= link_to "Source", source_path %><br />
+          <p></p>
+      </li>
+    </ul>
+    <h3>My Teams</h3>
+    <ul>
+      <li><%= icon("user_business_add_32", "New Team")%><%= link_to "Add Team", new_team_path %><br />
+          <p>Create a new team.</p>
+      </li>
+      <li class="last"><%= icon("user_business_search_32", "View Team")%><%= link_to "View Teams", teams_path %><br />
+          <p>View and edit teams you are in.</p>
+      </li>
+    </ul>
+    <h3>Hacks</h3>
+    <ul>
+      <li><%= icon("page_table_add_32", "Submit")%><%= link_to "Submit A Hack!", new_submission_path %><br />
+          <p>TO THE JUDGES!</p>
+      </li>
+      <li><%= icon("page_table_chart_32", "Submit")%><%= link_to "Your Hacks", submissions_path %><br />
+          <p>What did you send again?.</p>
+      </li>
+    </ul>
+    <h3>Food</h3>
+    <ul>
+      <li><%= icon("basket_add_32", "Order Food")%><%= link_to "Submit Your Food Order", edit_food_path %><br />
+          <p>NOM NOM NOM NOM</p>
+      </li>
+    </ul>
+  </div>
+  <!--  end div #sidebar -->
+  <!--  END SIDEBAR -->
+</div>

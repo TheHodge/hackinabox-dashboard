@@ -1,0 +1,19 @@
+<%= simple_form_for @food do |f|%>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<%= f.input :name %>
+	<%= f.input :category, :collection => @options, :input_html => {:class => "medium"} %>
+	<%= f.button :submit %>
+<% end %>
+<ul>
+<% if @options.any? %>
+<% @options.each do |option| %>
+	<li><b><%= option %></b><ul>
+	<% if @current_food.any? %>
+	<% @current_food.where(:category => option).each do |food|%>
+		<li><%= food.name %></li>
+	<% end %>
+	<% end %>
+	</ul></li>
+<% end %>
+<% end %>
+</ul>
